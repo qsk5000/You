@@ -2272,7 +2272,7 @@ async function loadStats() {
 }
 // ══════════════════════ WEEKLY SCHEDULE ══════════════════════
 
-const SCHED_SCI = {
+const SCHED_SCI = window.SCHED_SCI = {
   'الأحد':    ['📐 رياضيات','⚗️ كيمياء'],
   'الاثنين':  ['🔬 فيزياء','📖 عربي'],
   'الثلاثاء': ['🧬 أحياء','🌍 إنجليزي'],
@@ -2281,7 +2281,7 @@ const SCHED_SCI = {
   'الجمعة':   ['مراجعة شاملة 📝'],
   'السبت':    ['📖 عربي','🌍 إنجليزي'],
 };
-const SCHED_LIT = {
+const SCHED_LIT = window.SCHED_LIT = {
   'الأحد':    ['📖 عربي','📜 تاريخ'],
   'الاثنين':  ['🌐 جغرافية','💰 اقتصاد'],
   'الثلاثاء': ['🌍 إنجليزي','⚖️ تربية وطنية'],
@@ -2381,22 +2381,75 @@ function buildExamCountdown() {
 }
 // ══════════════════════ AI CHAT — GROQ ══════════════════════
 
-const GROQ_KEY  = '';
-const GROQ_URL  = 'https://aiii.ahmedtec312.workers.dev/';
+const GROQ_KEY  = ''; // الـ key عند الـ Worker — لا تحطه هنا
+const GROQ_URL  = 'https://aiii.ahmedtec312.workers.dev/'; // ← غيّر هذا لرابط الـ Worker مالتك
 const GROQ_MODEL = 'llama-3.3-70b-versatile';
 
 let aiHistory = []; // conversation memory
 let aiTyping  = false;
 
-const AI_SYSTEM = `أنت "مساعد ميزان الدراسة" — مساعد ذكي متخصص لطلاب السادس الإعدادي في العراق.
-أسلوبك: عراقي لطيف، واضح، ومشجع. تشرح بأمثلة بسيطة وتستخدم الإيموجي باعتدال.
-تتميز بـ:
-- شرح المواد الدراسية (رياضيات، فيزياء، كيمياء، أحياء، عربي، إنجليزي) بأسلوب مبسط
-- حل المسائل خطوة بخطوة
-- تقديم نصائح للمذاكرة والتركيز
-- تشجيع الطالب ورفع همته
-- الإجابة بالعربية دائماً ما لم يسألك بالإنجليزي
-اجعل إجاباتك مختصرة ومفيدة (3-6 أسطر عادةً ما لم يكن الموضوع معقداً).`;
+// ══ دالة تجمع بيانات الطالب الحالية من الـ DOM ══
+function buildStudentContext() {
+  const name     = G('me-name')?.textContent?.trim()      || 'الطالب';
+  const rank     = G('me-rank-chip')?.textContent?.trim() || '';
+  const totalPts = G('my-pts')?.textContent?.trim()       || '0';
+  const totalHrs = G('my-hrs')?.textContent?.trim()       || '0';
+  const todayMin = G('stat-today')?.textContent?.trim()   || '0';
+  const weekMin  = G('stat-week')?.textContent?.trim()    || '0';
+  const streak   = G('stat-streak')?.textContent?.trim()  || '0';
+  const sessions = G('stat-sessions')?.textContent?.trim()|| '0';
+  const selSubj  = G('subj-sel')?.value                   || '';
+  const ytTitle  = G('yt-now-title')?.textContent?.trim() || '';
+  const ytSubj   = G('yt-now-subj')?.textContent?.trim()  || '';
+  const ytPct    = G('session-progress-num')?.textContent?.trim() || '0%';
+
+  let branch = 'علمي';
+  if (document.querySelector('.bb-lit.sel, .bb-lit.on')) branch = 'أدبي';
+
+  const dayNames   = ['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+  const todayName  = dayNames[new Date().getDay()];
+  const sched      = branch === 'أدبي' ? window.SCHED_LIT : window.SCHED_SCI;
+  const todaySubjs = sched?.[todayName]?.join('، ') || 'غير محدد';
+
+  const subjSpans = [...(G('stat-subjects-wrap')?.querySelectorAll('div > div > span:first-child') || [])];
+  const topSubj   = subjSpans[0]?.textContent?.trim() || '';
+
+  return { name, rank, totalPts, totalHrs, todayMin, weekMin,
+           streak, sessions, selSubj, branch, todayName, todaySubjs,
+           topSubj, ytTitle, ytSubj, ytPct };
+}
+
+function buildSystemPrompt() {
+  const s = buildStudentContext();
+  return `أنت "مساعد ميزان الدراسة" — مساعد ذكي شخصي لطالب السادس الإعدادي في العراق.
+
+══ بيانات الطالب الآن ══
+• الاسم: ${s.name}
+• الفرع: ${s.branch}
+• مستواه: ${s.rank}
+• نقاطه الكلية: ${s.totalPts} نقطة
+• إجمالي ساعات الدراسة: ${s.totalHrs}
+• مذاكرة اليوم: ${s.todayMin} دقيقة
+• مذاكرة هذا الأسبوع: ${s.weekMin} دقيقة
+• سلسلة الأيام المتتالية: ${s.streak} يوم 🔥
+• عدد الجلسات الكلي: ${s.sessions} جلسة
+${s.topSubj  ? `• أكثر مادة يذاكرها: ${s.topSubj}` : ''}
+${s.selSubj  ? `• المادة المفتوحة الآن: ${s.selSubj}` : ''}
+${s.ytTitle  ? `• يشاهد درساً الآن: "${s.ytTitle}"${s.ytSubj?' ('+s.ytSubj+')':''} — أكمل ${s.ytPct}` : ''}
+
+══ جدول اليوم (${s.todayName}) ══
+${s.todaySubjs}
+
+══ تعليماتك ══
+- ناديه دائماً باسمه
+- استخدم بياناته الحقيقية في ردودك وتشجيعه
+- إذا درس أقل من 30 دقيقة اليوم، شجّعه برفق
+- إذا سلسلته أكثر من 3 أيام، امدحه على الاستمرارية
+- إذا يشاهد درساً، اربط نصيحتك بالمادة
+- أسلوبك: عراقي ودود، مشجع، واضح — إيموجي باعتدال
+- أجب بالعربية دائماً ما لم يسألك بالإنجليزي
+- اجعل ردودك مختصرة ومفيدة (3-6 أسطر) إلا إذا الموضوع يحتاج أكثر\`;
+}
 
 function aiAppendMsg(role, text) {
   const msgs = G('ai-msgs');
@@ -2472,14 +2525,14 @@ window.aiSend = async () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + GROQ_KEY
+        // Authorization يضيفها الـ Worker تلقائياً
       },
       body: JSON.stringify({
         model: GROQ_MODEL,
         max_tokens: 700,
         temperature: 0.7,
         messages: [
-          { role:'system', content: AI_SYSTEM },
+          { role:'system', content: buildSystemPrompt() },
           ...aiHistory
         ]
       })
