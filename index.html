@@ -2377,8 +2377,9 @@ function buildExamCountdown() {
 }
 // ══════════════════════ AI CHAT — GROQ ══════════════════════
 
-const GROQ_KEY  = '';
-const GROQ_URL  = 'https://api.groq.com/openai/v1/chat/completions';
+// ── الـ key محذوف — الطلبات تمر عبر Cloudflare Worker ──
+const GROQ_KEY  = '';   // لا تحط key هنا أبداً
+const GROQ_URL  = 'https://aiii.ahmedtec312.workers.dev/';  // ← غيّر هذا
 const GROQ_MODEL = 'llama-3.3-70b-versatile';
 
 let aiHistory = []; // conversation memory
@@ -2468,7 +2469,7 @@ window.aiSend = async () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + GROQ_KEY
+        // Authorization يضيفها الـ Worker تلقائياً
       },
       body: JSON.stringify({
         model: GROQ_MODEL,
