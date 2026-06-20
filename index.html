@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>ميزان Pro — السادس الإعدادي</title>
+<title>ميزان الدراسة — السادس الإعدادي</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://www.youtube.com/iframe_api"></script>
@@ -247,9 +247,12 @@ select option{background:#11152e}
   min-width:0;
 }
 .tab .ti{
-  font-size:1.2rem;line-height:1;
+  font-size:1.2rem;
+  line-height:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   transition:transform .25s cubic-bezier(.34,1.56,.64,1);
-  display:block;
 }
 .tab .tl{
   font-size:.56rem;font-weight:700;
@@ -267,10 +270,10 @@ select option{background:#11152e}
 }
 /* AI tab special style */
 .tab.tab-ai .ti{
-  width:26px;height:26px;border-radius:8px;
+  width:28px;height:28px;border-radius:9px;
   background:var(--grad2);
   display:flex;align-items:center;justify-content:center;
-  font-size:.9rem;font-style:normal;
+  font-size:.85rem;color:#fff;
   box-shadow:0 2px 10px rgba(244,114,182,.3);
   transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;
 }
@@ -650,6 +653,7 @@ select option{background:#11152e}
   .yt-thumb{width:68px;height:48px}
 }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -657,7 +661,7 @@ select option{background:#11152e}
   <div class="brand">
     <div class="brand-logo">م</div>
     <div>
-      <div class="brand-name">ميزان Pro</div>
+      <div class="brand-name">ميزان الدراسة</div>
       <div class="brand-tag">منصة التعليم الذكي</div>
     </div>
   </div>
@@ -674,7 +678,7 @@ select option{background:#11152e}
   <div class="auth-container">
     <div class="auth-hero">
       <span class="auth-icon">✨</span>
-      <div class="auth-title">ميزان Pro</div>
+      <div class="auth-title">ميزان الدراسة</div>
       <p class="auth-sub">رفيقك الذكي للسادس الإعدادي</p>
     </div>
 
@@ -749,13 +753,13 @@ select option{background:#11152e}
   </div>
 
   <div class="tabs">
-    <button class="tab on" id="tab-study"  onclick="switchTab('study')"><span class="ti">📚</span><span class="tl">دراسة</span></button>
-    <button class="tab"    id="tab-yt"     onclick="switchTab('yt')"><span class="ti">▶️</span><span class="tl">يوتيوب</span></button>
-    <button class="tab"    id="tab-goals"  onclick="switchTab('goals')"><span class="ti">🎯</span><span class="tl">أهداف</span></button>
-    <button class="tab"    id="tab-sched"  onclick="switchTab('sched')"><span class="ti">📅</span><span class="tl">جدول</span></button>
-    <button class="tab"    id="tab-rank"   onclick="switchTab('rank')"><span class="ti">🏆</span><span class="tl">تصنيف</span></button>
-    <button class="tab"    id="tab-stats"  onclick="switchTab('stats')"><span class="ti">📊</span><span class="tl">إحصاء</span></button>
-    <button class="tab tab-ai" id="tab-ai" onclick="switchTab('ai')"><span class="ti">✦</span><span class="tl">مساعد</span></button>
+    <button class="tab on" id="tab-study"  onclick="switchTab('study')"><span class="ti"><i class="fa-solid fa-book-open-reader"></i></span><span class="tl">دراسة</span></button>
+    <button class="tab"    id="tab-yt"     onclick="switchTab('yt')"><span class="ti"><i class="fa-brands fa-youtube"></i></span><span class="tl">يوتيوب</span></button>
+    <button class="tab"    id="tab-goals"  onclick="switchTab('goals')"><span class="ti"><i class="fa-solid fa-bullseye"></i></span><span class="tl">أهداف</span></button>
+    <button class="tab"    id="tab-sched"  onclick="switchTab('sched')"><span class="ti"><i class="fa-solid fa-calendar-days"></i></span><span class="tl">جدول</span></button>
+    <button class="tab"    id="tab-rank"   onclick="switchTab('rank')"><span class="ti"><i class="fa-solid fa-ranking-star"></i></span><span class="tl">تصنيف</span></button>
+    <button class="tab"    id="tab-stats"  onclick="switchTab('stats')"><span class="ti"><i class="fa-solid fa-chart-column"></i></span><span class="tl">إحصاء</span></button>
+    <button class="tab tab-ai" id="tab-ai" onclick="switchTab('ai')"><span class="ti"><i class="fa-solid fa-microchip-ai"></i></span><span class="tl">مساعد</span></button>
   </div>
 
   <!-- TAB: STUDY -->
@@ -998,7 +1002,7 @@ select option{background:#11152e}
     <div class="ai-chat-hd">
       <div class="ai-avatar">✦</div>
       <div class="ai-hd-body">
-        <div class="ai-hd-name">مساعد ميزان الذكي</div>
+        <div class="ai-hd-name">مساعد ميزان الدراسة الدراسة</div>
         <div class="ai-hd-sub">أسألني أي سؤال دراسي — أنا هنا 24/7</div>
       </div>
       <div class="ai-status"></div>
@@ -2377,15 +2381,14 @@ function buildExamCountdown() {
 }
 // ══════════════════════ AI CHAT — GROQ ══════════════════════
 
-// ── الـ key محذوف — الطلبات تمر عبر Cloudflare Worker ──
-const GROQ_KEY  = '';   // لا تحط key هنا أبداً
-const GROQ_URL  = 'https://aiii.ahmedtec312.workers.dev/';  // ← غيّر هذا
+const GROQ_KEY  = '';
+const GROQ_URL  = 'https://aiii.ahmedtec312.workers.dev/';
 const GROQ_MODEL = 'llama-3.3-70b-versatile';
 
 let aiHistory = []; // conversation memory
 let aiTyping  = false;
 
-const AI_SYSTEM = `أنت "مساعد ميزان" — مساعد ذكي متخصص لطلاب السادس الإعدادي في العراق.
+const AI_SYSTEM = `أنت "مساعد ميزان الدراسة" — مساعد ذكي متخصص لطلاب السادس الإعدادي في العراق.
 أسلوبك: عراقي لطيف، واضح، ومشجع. تشرح بأمثلة بسيطة وتستخدم الإيموجي باعتدال.
 تتميز بـ:
 - شرح المواد الدراسية (رياضيات، فيزياء، كيمياء، أحياء، عربي، إنجليزي) بأسلوب مبسط
@@ -2469,7 +2472,7 @@ window.aiSend = async () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // Authorization يضيفها الـ Worker تلقائياً
+        'Authorization': 'Bearer ' + GROQ_KEY
       },
       body: JSON.stringify({
         model: GROQ_MODEL,
