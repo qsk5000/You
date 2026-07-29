@@ -59,7 +59,6 @@ body::after{
   mask-image:radial-gradient(ellipse 60% 60% at 50% 0%, black, transparent 70%);
 }
 
-/* ── glass utility ── */
 .glass{
   background:var(--c1s);
   border:1px solid var(--br);
@@ -69,7 +68,6 @@ body::after{
   box-shadow:0 8px 32px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
 }
 
-/* ── topbar ── */
 .topbar{
   position:sticky;top:0;z-index:300;display:flex;align-items:center;justify-content:space-between;
   padding:.9rem 1.2rem;background:rgba(5,6,12,.7);
@@ -105,7 +103,6 @@ body::after{
 
 .wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:1.4rem 1rem 7rem}
 
-/* ── AUTH ── */
 #s-auth{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .auth-container{width:100%;max-width:380px}
 .auth-hero{text-align:center;margin-bottom:2rem;animation:fadeUp .5s ease both}
@@ -141,7 +138,6 @@ body::after{
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── general elements ── */
 .card{padding:1.4rem;margin-bottom:1rem;animation:fadeUp .45s ease both;position:relative;overflow:hidden}
 .card::before{
   content:'';position:absolute;top:-40%;right:-20%;width:200px;height:200px;
@@ -193,7 +189,6 @@ select option{background:#11152e}
 }
 @keyframes pr{0%,100%{box-shadow:0 0 0 0 rgba(251,113,133,.4)}50%{box-shadow:0 0 0 12px rgba(251,113,133,0)}}
 
-/* ── personal hero ── */
 .me-hero{
   padding:1.7rem 1.3rem;text-align:center;margin-bottom:1rem;position:relative;overflow:hidden;animation:fadeUp .4s ease both;
 }
@@ -221,7 +216,6 @@ select option{background:#11152e}
 .sbox.tc .sv{background:var(--grad-green);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .sbox.gc .sv{background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-/* ══ BOTTOM NAV ══ */
 .tabs{
   position:fixed;bottom:0;left:50%;transform:translateX(-50%);
   width:100%;max-width:480px;
@@ -268,7 +262,6 @@ select option{background:#11152e}
   background:var(--grad1);
   box-shadow:0 0 10px rgba(139,92,246,.7);
 }
-/* AI tab special style */
 .tab.tab-ai .ti{
   width:28px;height:28px;border-radius:9px;
   background:var(--grad2);
@@ -285,7 +278,6 @@ select option{background:#11152e}
 
 .empty-msg{text-align:center;color:var(--ink3);padding:1.6rem;font-size:.85rem}
 
-/* ── timer ── */
 #timer-box{
   display:none;flex-direction:column;align-items:center;justify-content:center;
   border-radius:22px;padding:1.8rem 1.2rem 1.3rem;margin-bottom:.8rem;
@@ -347,7 +339,6 @@ select option{background:#11152e}
 .toast.t-warn{border-color:rgba(251,191,36,.35);color:var(--gold)}
 .toast.t-info{color:var(--ink)}
 
-/* ── session modal ── */
 .modal-overlay{
   position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.65);
   display:none;align-items:center;justify-content:center;z-index:999;backdrop-filter:blur(8px)
@@ -377,7 +368,6 @@ select option{background:#11152e}
 .session-progress-bar{width:100%;height:9px;background:var(--c2);border-radius:5px;overflow:hidden}
 .session-progress-fill{height:100%;background:var(--grad1);border-radius:5px;width:0%;transition:width .3s ease}
 
-/* ── leaderboard ── */
 .lb-row{
   display:flex;align-items:center;gap:.7rem;padding:.9rem 1.05rem;margin-bottom:.55rem;
   transition:border-color .2s,transform .15s;animation:fadeUp .35s ease both;
@@ -392,7 +382,6 @@ select option{background:#11152e}
 .lb-h{display:block;font-size:.7rem;color:var(--ink3);margin-top:.15rem}
 .lb-empty{text-align:center;color:var(--ink3);font-size:.85rem;padding:2rem}
 
-/* ── goals ── */
 .goal-item{
   display:flex;align-items:center;gap:.7rem;padding:.8rem .95rem;margin-bottom:.5rem;
   transition:all .2s;animation:fadeUp .3s ease both;border-radius:14px;
@@ -409,7 +398,6 @@ select option{background:#11152e}
 .tip-ttl{font-size:.82rem;font-weight:800;color:var(--cyan);margin-bottom:.6rem}
 .tip-li{font-size:.78rem;color:var(--ink2);margin-bottom:.35rem;display:flex;gap:.4rem;align-items:flex-start;line-height:1.5}
 
-/* ── study mode switcher ── */
 .study-mode-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.9rem}
 .smode-btn{
   border:1.5px solid var(--br);border-radius:13px;
@@ -418,7 +406,6 @@ select option{background:#11152e}
 }
 .smode-btn.on{background:var(--grad1);border-color:transparent;color:#06080f;box-shadow:0 4px 16px rgba(139,92,246,.3)}
 
-/* ── pomodoro ── */
 .pomo-ring-wrap{position:relative;width:190px;height:190px;margin:0 auto 1.2rem}
 .pomo-ring{width:100%;height:100%;transform:rotate(-90deg)}
 .pomo-track{fill:none;stroke:rgba(255,255,255,.06);stroke-width:9}
@@ -455,7 +442,6 @@ select option{background:#11152e}
 .pomo-set-ctrl span{font-family:'IBM Plex Mono',monospace;font-size:.9rem;color:var(--ink);font-weight:600;min-width:24px;text-align:center}
 .pomo-set-unit{font-size:.75rem;color:var(--ink3)}
 
-/* ── youtube ── */
 .yt-input-row{display:flex;gap:.5rem;margin-bottom:.7rem}
 .yt-input-row input{margin-bottom:0;flex:1}
 .yt-input-row button{margin:0;width:auto;padding:.85rem 1.1rem;flex-shrink:0;border-radius:12px}
@@ -490,7 +476,6 @@ select option{background:#11152e}
 .yt-del{background:none;border:none;color:var(--ink3);font-size:1rem;cursor:pointer;padding:.3rem;border-radius:8px;flex-shrink:0;transition:all .15s}
 .yt-del:hover{color:var(--red);background:rgba(251,113,133,.1)}
 
-/* ── yt watch stats ── */
 .yt-watch-bar{
   display:none;padding:.85rem 1.1rem;margin-bottom:.9rem;
   align-items:center;gap:.9rem;
@@ -504,7 +489,6 @@ select option{background:#11152e}
 .yt-watch-lbl{font-size:.62rem;color:var(--ink3);font-weight:600}
 .yt-watch-div{width:1px;height:30px;background:var(--br)}
 
-/* ── yt search results ── */
 .yt-search-res{display:flex;flex-direction:column;gap:.55rem;margin-top:.7rem}
 .yt-sr-item{
   display:flex;gap:.75rem;align-items:center;padding:.75rem;border-radius:13px;
@@ -523,7 +507,6 @@ select option{background:#11152e}
 }
 .yt-stab.on{background:var(--grad1);border-color:transparent;color:#06080f}
 
-/* ── schedule widget ── */
 .sched-grid{display:flex;flex-direction:column;gap:.5rem}
 .sched-day{border-radius:13px;overflow:hidden;border:1px solid var(--br)}
 .sched-day-hd{
@@ -539,7 +522,6 @@ select option{background:#11152e}
 .sched-pill.done{background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.25);color:var(--green);text-decoration:line-through;opacity:.6}
 .sched-empty{font-size:.78rem;color:var(--ink3);padding:.3rem .2rem}
 
-/* ── smart tips ── */
 .ai-tip-card{
   padding:1.1rem 1.2rem;border-radius:14px;
   background:linear-gradient(135deg,rgba(139,92,246,.1),rgba(34,211,238,.07));
@@ -548,7 +530,6 @@ select option{background:#11152e}
 .ai-tip-hd{font-size:.78rem;font-weight:800;color:var(--cyan);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
 .ai-tip-txt{font-size:.83rem;color:var(--ink);line-height:1.65}
 
-/* ══ AI CHAT ══ */
 #panel-ai{display:none;flex-direction:column;height:calc(100vh - 130px)}
 #panel-ai.show{display:flex}
 
@@ -676,7 +657,6 @@ select option{background:#11152e}
 
 <div class="wrap">
 
-<!-- ══ AUTH ══ -->
 <div id="s-auth">
   <div class="auth-container">
     <div class="auth-hero">
@@ -721,7 +701,6 @@ select option{background:#11152e}
   </div>
 </div>
 
-<!-- ══ REGISTER ══ -->
 <div id="s-register" style="display:none">
   <div class="hero">
     <span class="h-icon">✨</span>
@@ -741,7 +720,6 @@ select option{background:#11152e}
   </div>
 </div>
 
-<!-- ══ MAIN ══ -->
 <div id="s-main" style="display:none">
 
   <div class="me-hero glass">
@@ -765,7 +743,6 @@ select option{background:#11152e}
     <button class="tab tab-ai" id="tab-ai" onclick="switchTab('ai')"><span class="ti"><i class="fa-solid fa-microchip-ai"></i></span><span class="tl">مساعد</span></button>
   </div>
 
-  <!-- TAB: STUDY -->
   <div id="panel-study">
 
     <div class="study-mode-row">
@@ -773,7 +750,6 @@ select option{background:#11152e}
       <button class="smode-btn"   id="smode-pomo"   onclick="switchStudyMode('pomo')">🍅 بومودورو</button>
     </div>
 
-    <!-- POMODORO PANEL -->
     <div id="pomo-panel" style="display:none">
       <div class="card glass">
         <div class="sec-ttl">🍅 بومودورو</div>
@@ -818,7 +794,6 @@ select option{background:#11152e}
       </div>
     </div>
 
-    <!-- NORMAL STUDY PANEL -->
     <div id="normal-panel">
       <div class="card glass">
         <div class="sec-ttl">📚 جلسة الدراسة</div>
@@ -875,10 +850,8 @@ select option{background:#11152e}
     </div>
   </div>
 
-  <!-- TAB: YOUTUBE -->
   <div id="panel-yt" style="display:none">
 
-    <!-- Watch time stats bar -->
     <div class="yt-watch-bar glass" id="yt-watch-bar">
       <div class="yt-watch-stat">
         <div class="yt-watch-val" id="yt-watch-min">0</div>
@@ -899,13 +872,11 @@ select option{background:#11152e}
     <div class="card glass">
       <div class="sec-ttl">▶️ شغّل محاضرة</div>
 
-      <!-- Search tabs -->
       <div class="yt-search-tabs">
         <button class="yt-stab on" id="ytab-link" onclick="ytSwitchTab('link')">🔗 رابط</button>
         <button class="yt-stab" id="ytab-search" onclick="ytSwitchTab('search')">🔍 بحث</button>
       </div>
 
-      <!-- Link panel -->
       <div id="yt-panel-link">
         <div class="yt-input-row">
           <input id="yt-url" type="text" placeholder="رابط فيديو يوتيوب…" autocomplete="off" dir="ltr" style="text-align:left"
@@ -914,7 +885,6 @@ select option{background:#11152e}
         </div>
       </div>
 
-      <!-- Search panel -->
       <div id="yt-panel-search" style="display:none">
         <div class="yt-input-row">
           <input id="yt-search-q" type="text" placeholder="ابحث عن محاضرة (مثال: فيزياء سادس)" autocomplete="off"
@@ -924,7 +894,6 @@ select option{background:#11152e}
         <div id="yt-search-results" class="yt-search-res"></div>
       </div>
 
-      <!-- Now playing -->
       <div class="yt-now-playing glass" id="yt-now-playing">
         <img class="yt-np-thumb" id="yt-np-thumb" src="" alt=""/>
         <div class="yt-np-body">
@@ -934,7 +903,6 @@ select option{background:#11152e}
         <button class="btn btn-g" style="width:auto;margin:0;padding:.6rem .9rem;font-size:.8rem" onclick="ytSaveCurrent()">💾 حفظ</button>
       </div>
 
-      <!-- Player using YouTube IFrame API -->
       <div id="yt-player-wrap" style="display:none;margin-bottom:.9rem">
         <div class="yt-player-wrap">
           <div id="yt-player-div" style="width:100%;height:100%"></div>
@@ -944,7 +912,6 @@ select option{background:#11152e}
         </button>
       </div>
 
-      <!-- Fallback (when API fails) -->
       <div id="yt-fallback-card" style="display:none;padding:.9rem;border-radius:14px;background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.2);text-align:center;margin-top:.5rem">
         <div style="font-size:.85rem;color:var(--gold);font-weight:700;margin-bottom:.6rem">⚠️ هذا الفيديو مقيّد — لا يمكن تشغيله هنا مباشرة</div>
         <a id="yt-fallback-link" href="#" target="_blank" class="btn btn-p" style="width:auto;display:inline-flex;padding:.75rem 1.4rem;text-decoration:none;font-size:.85rem">▶ فتح في يوتيوب</a>
@@ -958,7 +925,6 @@ select option{background:#11152e}
     </div>
   </div>
 
-  <!-- TAB: GOALS -->
   <div id="panel-goals" style="display:none">
     <div class="card glass">
       <div class="sec-ttl">🎯 أهداف اليوم</div>
@@ -977,7 +943,6 @@ select option{background:#11152e}
     </div>
   </div>
 
-  <!-- TAB: SCHEDULE -->
   <div id="panel-sched" style="display:none">
     <div class="card glass">
       <div class="sec-ttl">📅 جدول أسبوعي ذكي</div>
@@ -991,22 +956,18 @@ select option{background:#11152e}
       <div class="sched-grid" id="sched-grid"></div>
     </div>
 
-    <!-- AI Study tip -->
     <div class="ai-tip-card" id="sched-tip-card">
       <div class="ai-tip-hd">🧠 نصيحة الذكاء</div>
       <div class="ai-tip-txt" id="sched-tip-txt">اختر فرعك الدراسي لترى جدولك المخصص ✨</div>
     </div>
 
-    <!-- Exam countdown -->
     <div class="card glass">
       <div class="sec-ttl">⏳ العد التنازلي للامتحانات</div>
       <div id="exam-countdown-wrap" style="display:flex;flex-wrap:wrap;gap:.6rem"></div>
     </div>
   </div>
 
-  <!-- TAB: AI CHAT -->
   <div id="panel-ai">
-    <!-- Header -->
     <div class="ai-chat-hd">
       <div class="ai-avatar">✦</div>
       <div class="ai-hd-body">
@@ -1016,7 +977,6 @@ select option{background:#11152e}
       <div class="ai-status"></div>
     </div>
 
-    <!-- Messages -->
     <div class="ai-msgs" id="ai-msgs">
       <div class="ai-msg bot">
         <div class="ai-msg-av">✦</div>
@@ -1027,7 +987,6 @@ select option{background:#11152e}
       </div>
     </div>
 
-    <!-- Quick questions -->
     <div class="ai-quick-btns" id="ai-quick-btns">
       <button class="ai-q" onclick="aiQuick('اشرح لي قانون أوم بشكل مبسط')">⚡ قانون أوم</button>
       <button class="ai-q" onclick="aiQuick('ما هي خطوات حل المعادلة التفاضلية؟')">📐 معادلات</button>
@@ -1035,7 +994,6 @@ select option{background:#11152e}
       <button class="ai-q" onclick="aiQuick('كيف أحسن تركيزي في الدراسة؟')">🧠 تركيز</button>
     </div>
 
-    <!-- Input -->
     <div class="ai-input-row">
       <textarea id="ai-input" placeholder="اكتب سؤالك هنا…"
         onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();aiSend()}"
@@ -1044,7 +1002,6 @@ select option{background:#11152e}
     </div>
   </div>
 
-  <!-- TAB: RANK -->
   <div id="panel-rank" style="display:none">
     <div class="card glass">
       <div class="sec-ttl">🏆 تصنيف الأفراد (الكلي)</div>
@@ -1052,7 +1009,6 @@ select option{background:#11152e}
     </div>
   </div>
 
-  <!-- TAB: STATS -->
   <div id="panel-stats" style="display:none">
     <div class="card glass">
       <div class="sec-ttl">📊 إحصائياتي</div>
@@ -1076,9 +1032,8 @@ select option{background:#11152e}
 
 </div>
 
-</div><!-- end .wrap -->
+</div>
 
-<!-- MODAL: SESSION -->
 <div id="session-modal" class="modal-overlay">
   <div class="modal-content glass">
     <div class="modal-hd">
@@ -1110,7 +1065,6 @@ import { getFirestore, doc, setDoc, getDoc, getDocs, updateDoc, increment, delet
          onSnapshot, collection, query, orderBy, serverTimestamp, where, limit }
                                from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// ── Firebase (masar-5db30) ──
 const firebaseConfig = {
   apiKey:            "AIzaSyDeBAgXm6L3NPTitSuzkS37ZFoyy_UvMHk",
   authDomain:        "masar-5db30.firebaseapp.com",
@@ -1129,6 +1083,8 @@ let uid         = null;
 let studyActive = false;
 let studySec    = 0;
 let studyTick   = null;
+let segmentStart = 0;
+let secAtStart   = 0;
 let threeHourWarned = false;
 
 const G       = id => document.getElementById(id);
@@ -1171,8 +1127,6 @@ function getMizanTip(sessionSecs) {
   if (sessionSecs > 7200) return mizanTipsLong[Math.floor(Math.random() * mizanTipsLong.length)];
   return mizanTips[Math.floor(Math.random() * mizanTips.length)];
 }
-
-// ══════════════════════ SESSION / AUTH ══════════════════════
 
 async function initSession() {
   const savedUid = localStorage.getItem('mizan_uid');
@@ -1322,8 +1276,6 @@ function goScreen(id) {
   const target = G(id); if(target) target.style.display='block';
 }
 
-// ══════════════════════ MAIN BOOT ══════════════════════
-
 function bootMain() {
   onSnapshot(doc(db,'users',uid), snap => {
     if (!snap.exists()) return;
@@ -1353,8 +1305,6 @@ function bootMain() {
   renderGoals();
   loadStats();
 }
-
-// ══════════════════════ LEADERBOARD ══════════════════════
 
 let soloLoaded = false;
 window.loadSoloLeaderboard = async () => {
@@ -1388,8 +1338,6 @@ window.loadSoloLeaderboard = async () => {
   }
 };
 
-// ══════════════════════ TABS ══════════════════════
-
 window.switchTab = tab => {
   ['study','yt','goals','sched','rank','stats'].forEach(t => {
     const panel = G('panel-'+t);
@@ -1397,7 +1345,6 @@ window.switchTab = tab => {
     if (panel) panel.style.display = t===tab ? 'block' : 'none';
     if (tabEl)  tabEl.classList.toggle('on', t===tab);
   });
-  // AI panel special (flex)
   const aiPanel = G('panel-ai');
   const aiTab   = G('tab-ai');
   if (aiPanel) { aiPanel.style.display = tab==='ai' ? 'flex' : 'none'; }
@@ -1410,59 +1357,70 @@ window.switchTab = tab => {
   if (tab !== 'yt' && ytWatchTick) ytOnLeave();
 };
 
-// ══════════════════════ STUDY TIMER ══════════════════════
+/* ══════════════════════ STUDY TIMER — FIXED ══════════════════════
+   الإصلاحات المطبّقة هنا:
+   1) مصدر وحيد للوقت (segmentStart/secAtStart) بدل حسابين متضاربين.
+   2) عند إخفاء التطبيق نوقف الـ interval فعلياً (بدل تركه يشتغل بالخلفية
+      بشكل غير موثوق) ونثبّت الرقم؛ وعند الرجوع نعوّض الفرق مرة وحدة بس،
+      فما يصير احتساب مضاعف ولا توقف غير مبرر.
+   3) عند إغلاق التطبيق بالكامل وإعادة فتحه (يصير كثير بالموبايل)،
+      restoreStudyTimer() تحسب الوقت الفعلي المنقضي وتضيفه بدل ما تتجاهله.
+   ═══════════════════════════════════════════════════════════════ */
 
 function saveStudyState() {
   localStorage.setItem('mizan_study_sec',    studySec);
   localStorage.setItem('mizan_study_saved',  Date.now());
   localStorage.setItem('mizan_study_active', studyActive ? '1' : '0');
-  if (studyActive) localStorage.setItem('mizan_study_bg_ts', Date.now());
 }
 function clearStudyState() {
   localStorage.removeItem('mizan_study_sec');
   localStorage.removeItem('mizan_study_saved');
   localStorage.removeItem('mizan_study_active');
-  localStorage.removeItem('mizan_study_bg_ts');
 }
+
 function restoreStudyTimer() {
   const saved     = localStorage.getItem('mizan_study_sec');
   const savedTime = localStorage.getItem('mizan_study_saved');
   const wasActive = localStorage.getItem('mizan_study_active');
-  if (!saved || !savedTime) return;
+  if (saved === null || !savedTime) return;
 
   studySec = parseInt(saved) || 0;
-  localStorage.removeItem('mizan_study_bg_ts');
 
-  if (wasActive === '1') startStudy();
-  else renderClock();
+  if (wasActive === '1') {
+    const gap = Math.floor((Date.now() - parseInt(savedTime)) / 1000);
+    if (gap > 0 && gap < 43200) studySec += gap; // سقف 12 ساعة للأمان
+    startStudy();
+  } else {
+    renderClock();
+  }
 }
 
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
-    if (studyActive) {
-      localStorage.setItem('mizan_study_bg_ts', Date.now());
+    if (studyActive && studyTick) {
+      studySec = secAtStart + Math.floor((Date.now() - segmentStart) / 1000);
+      clearInterval(studyTick);
+      studyTick = null;
       saveStudyState();
     }
   } else {
-    if (studyActive) {
-      const bgTs = localStorage.getItem('mizan_study_bg_ts');
-      if (bgTs) {
-        const absenceSeconds = Math.floor((Date.now() - parseInt(bgTs)) / 1000);
-        if (absenceSeconds > 0 && absenceSeconds < 43200) {
-          clearInterval(studyTick);
-          studySec += absenceSeconds;
-          localStorage.removeItem('mizan_study_bg_ts');
-          studyActive = false;
-          startStudy();
-        }
+    if (studyActive && !studyTick) {
+      const lastSaved = parseInt(localStorage.getItem('mizan_study_saved') || '0', 10);
+      if (lastSaved) {
+        const gap = Math.floor((Date.now() - lastSaved) / 1000);
+        if (gap > 0 && gap < 43200) studySec += gap;
       }
+      segmentStart = Date.now();
+      secAtStart    = studySec;
+      studyTick = setInterval(tickStudy, 1000);
+      tickStudy();
     }
   }
 });
 
 window.addEventListener('pagehide', () => {
   if (studyActive) {
-    localStorage.setItem('mizan_study_bg_ts', Date.now());
+    studySec = secAtStart + Math.floor((Date.now() - segmentStart) / 1000);
     saveStudyState();
   }
 });
@@ -1520,11 +1478,40 @@ function completeSession() {
 window.toggleStudy  = () => { studyActive ? stopStudy()   : startStudy(); };
 window.pauseResume  = () => { studyActive ? pauseStudy() : resumeStudy(); };
 
+function tickStudy() {
+  const elapsed = Math.floor((Date.now() - segmentStart) / 1000);
+  studySec = secAtStart + elapsed;
+  renderClock();
+  if (sessionMode) updateSessionInfo();
+
+  if (studySec >= 10800 && !threeHourWarned) {
+    threeHourWarned = true;
+    toast('⚠️ درست 3 ساعات! خذ استراحة 15 دقيقة للحفاظ على تركيزك 🧠','warn');
+  }
+
+  if (sessionMode && studySec > 0 && !isOnBreak &&
+      Math.floor(studySec / sessionBreakTime) > Math.floor(secAtStart / sessionBreakTime) &&
+      (sessionTarget - studySec) > 0) {
+    isOnBreak = true;
+    pauseStudy();
+    toast(`⏰ استراحة! خذ ${Math.floor(sessionBreakTime/60)} دقائق 🌿`,'ok');
+    setTimeout(() => {
+      if (isOnBreak) {
+        isOnBreak = false;
+        toast('الاستراحة انتهت! ارجع للدراسة 💪','ok');
+      }
+    }, sessionBreakTime * 1000);
+  }
+
+  saveStudyState();
+}
+
 function startStudy() {
   studyActive     = true;
   threeHourWarned = false;
-  const segmentStart = Date.now();
-  const secAtStart   = studySec;
+  segmentStart    = Date.now();
+  secAtStart      = studySec;
+
   G('study-btn').classList.add('running');
   setText('study-lbl', '⏹ إنهاء الجلسة');
   G('timer-box').style.display = 'flex';
@@ -1532,38 +1519,20 @@ function startStudy() {
   if (pb) { pb.style.display = 'flex'; pb.textContent = '⏸'; pb.classList.add('paused-state'); }
   const subjEl = G('timer-subject-lbl');
   if (subjEl) { const sel = G('subj-sel'); subjEl.textContent = sel ? sel.value : '📚 جاري الدراسة'; }
+
   renderClock();
-  studyTick = setInterval(() => {
-    const elapsed = Math.floor((Date.now() - segmentStart) / 1000);
-    studySec = secAtStart + elapsed;
-    renderClock();
-    if (sessionMode) updateSessionInfo();
-
-    if (studySec >= 10800 && !threeHourWarned) {
-      threeHourWarned = true;
-      toast('⚠️ درست 3 ساعات! خذ استراحة 15 دقيقة للحفاظ على تركيزك 🧠','warn');
-    }
-
-    if (sessionMode && studySec > 0 && studySec % sessionBreakTime === 0 && !isOnBreak && (sessionTarget - studySec) > 0) {
-      isOnBreak = true;
-      pauseStudy();
-      toast(`⏰ استراحة! خذ ${Math.floor(sessionBreakTime/60)} دقائق 🌿`,'ok');
-      setTimeout(() => {
-        if (isOnBreak) {
-          isOnBreak = false;
-          toast('الاستراحة انتهت! ارجع للدراسة 💪','ok');
-        }
-      }, sessionBreakTime * 1000);
-    }
-
-    saveStudyState();
-  }, 1000);
+  clearInterval(studyTick);
+  studyTick = setInterval(tickStudy, 1000);
+  saveStudyState();
 }
 
 function pauseStudy() {
   if (!studyActive) return;
+  studySec = secAtStart + Math.floor((Date.now() - segmentStart) / 1000);
   studyActive = false;
   clearInterval(studyTick);
+  studyTick = null;
+  saveStudyState();
   G('study-btn').classList.remove('running');
   setText('study-lbl', '⏹ إنهاء الجلسة');
   const pb = G('pause-btn');
@@ -1578,6 +1547,7 @@ function resumeStudy() {
 async function stopStudy() {
   studyActive = false;
   clearInterval(studyTick);
+  studyTick = null;
   G('study-btn').classList.remove('running');
   setText('study-lbl', '▶ ابدأ الدراسة');
   G('timer-box').style.display = 'none';
@@ -1598,9 +1568,7 @@ async function stopStudy() {
   studySec = 0;
   renderClock();
 
-  const pending = JSON.parse(localStorage.getItem('mizan_pending_pts') || '[]');
-  pending.push({ pts, secs, subj, uid, ts: Date.now() });
-  localStorage.setItem('mizan_pending_pts', JSON.stringify(pending));
+  pushPendingPts({ pts, secs, subj, uid, ts: Date.now() });
 
   toast('أحسنت! +'+pts+' نقطة ('+subj+') — جاري الحفظ...','ok');
   flash('+'+pts+' ⚡');
@@ -1610,27 +1578,54 @@ async function stopStudy() {
   await flushPendingPts();
 }
 
-async function flushPendingPts() {
+/* ══════════════════════ نقاط معلّقة — بدون فقدان أو تكرار ══════════════════════ */
+
+let isFlushingPts = false;
+let flushQueued   = false;
+
+function pushPendingPts(entry) {
+  entry.id = entry.uid + '_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7);
   const pending = JSON.parse(localStorage.getItem('mizan_pending_pts') || '[]');
-  if (pending.length === 0) return;
+  pending.push(entry);
+  localStorage.setItem('mizan_pending_pts', JSON.stringify(pending));
+}
 
-  const toSend = [...pending];
-  localStorage.removeItem('mizan_pending_pts');
-
+async function flushPendingPts() {
+  if (isFlushingPts) { flushQueued = true; return; }
+  isFlushingPts = true;
   try {
-    for (const entry of toSend) {
-      await updateDoc(doc(db,'users', entry.uid), { totalPts:increment(entry.pts), totalSec:increment(entry.secs) });
-      await setDoc(doc(collection(db,'sessions')), {
-        uid: entry.uid, subject: entry.subj,
-        seconds: entry.secs, pts: entry.pts, ts: serverTimestamp(),
-        sessionMode, sessionTarget
-      });
+    const batch = JSON.parse(localStorage.getItem('mizan_pending_pts') || '[]');
+    if (batch.length === 0) return;
+
+    const attemptedIds = new Set(batch.map(e => e.id));
+    const failed = [];
+
+    for (const entry of batch) {
+      try {
+        await updateDoc(doc(db,'users', entry.uid), {
+          totalPts: increment(entry.pts), totalSec: increment(entry.secs)
+        });
+        await setDoc(doc(collection(db,'sessions')), {
+          uid: entry.uid, subject: entry.subj,
+          seconds: entry.secs, pts: entry.pts, ts: serverTimestamp()
+        });
+      } catch (err) {
+        failed.push(entry);
+      }
     }
-    loadStats();
-  } catch(e) {
-    const stillPending = JSON.parse(localStorage.getItem('mizan_pending_pts') || '[]');
-    localStorage.setItem('mizan_pending_pts', JSON.stringify([...toSend, ...stillPending]));
-    toast('لا يوجد اتصال — ستُحفظ النقاط عند عودة النت 📶','warn');
+
+    const latest = JSON.parse(localStorage.getItem('mizan_pending_pts') || '[]');
+    const newlyAdded = latest.filter(e => !attemptedIds.has(e.id));
+    localStorage.setItem('mizan_pending_pts', JSON.stringify([...failed, ...newlyAdded]));
+
+    if (failed.length > 0) {
+      toast('بعض النقاط لم تُحفظ — راح تنحفظ تلقائياً لما يرجع النت 📶','warn');
+    } else {
+      loadStats();
+    }
+  } finally {
+    isFlushingPts = false;
+    if (flushQueued) { flushQueued = false; setTimeout(flushPendingPts, 400); }
   }
 }
 
@@ -1650,7 +1645,7 @@ function renderClock() {
 }
 function flash(t){ const e=G('pts-flash'); e.textContent=t; e.classList.add('on'); setTimeout(()=>e.classList.remove('on'),2200); }
 
-// ══════════════════════ POMODORO ══════════════════════
+/* ══════════════════════ POMODORO — نفس إصلاح تجميد الخلفية ══════════════════════ */
 
 let pomoWorkMins  = 25;
 let pomoBreakMins = 5;
@@ -1660,7 +1655,6 @@ let pomoPhase     = 'work';
 let pomoSec       = 0;
 let pomoActive    = false;
 let pomoTick      = null;
-let pomoBgTs      = null;
 
 const POMO_CIRCUMFERENCE = 2 * Math.PI * 52;
 
@@ -1705,62 +1699,69 @@ function updatePomoArc() {
 
 window.pomoToggle = () => { pomoActive ? pomoPause() : pomoStart(); };
 
+let pomoSegStart = 0;
+let pomoSecAtStart = 0;
+
 function pomoStart() {
   if (pomoSec <= 0) pomoInit();
   pomoActive = true;
+  pomoSegStart = Date.now();
+  pomoSecAtStart = pomoSec;
   const btn = G('pomo-main-btn');
   if (btn) { btn.textContent = '⏸'; btn.classList.add('running'); }
-  const segStart = Date.now();
-  const secAtStart = pomoSec;
   renderPomoRounds();
-  pomoTick = setInterval(() => {
-    const elapsed = Math.floor((Date.now() - segStart) / 1000);
-    pomoSec = Math.max(0, secAtStart - elapsed);
-    renderPomoClock();
-    updatePomoArc();
-    if (pomoSec <= 0) {
-      clearInterval(pomoTick);
-      pomoTick = null;
-      pomoActive = false;
-      const btn2 = G('pomo-main-btn');
-      if (btn2) { btn2.textContent = '▶'; btn2.classList.remove('running'); }
-      if (pomoPhase === 'work') {
-        pomoRound++;
-        const earnedPts = pomoWorkMins;
-        if (uid && earnedPts > 0) {
-          const pending = JSON.parse(localStorage.getItem('mizan_pending_pts') || '[]');
-          const subj = G('subj-sel')?.value || '—';
-          pending.push({ pts: earnedPts, secs: pomoWorkMins * 60, subj, uid, ts: Date.now() });
-          localStorage.setItem('mizan_pending_pts', JSON.stringify(pending));
-          flash('+' + earnedPts + ' ⚡');
-          flushPendingPts();
-        }
-        if (pomoRound >= pomoTotalRounds) {
-          toast('🎉 أتممت ' + pomoTotalRounds + ' جولات! استراحة طويلة تستاهلها يا بطل 🏆', 'ok');
-          pomoRound = 0;
-          pomoPhase = 'work';
-          pomoInit();
-        } else {
-          toast('✅ جولة ' + pomoRound + ' خلصت! خذ استراحة ☕', 'ok');
-          pomoPhase = 'break';
-          pomoSec = pomoBreakMins * 60;
-          renderPomoRounds();
-          renderPomoClock();
-          updatePomoArc();
-          setTimeout(() => { if (!pomoActive) pomoStart(); }, 1500);
-        }
-      } else {
-        toast('💪 انتهت الاستراحة! ابدأ الجولة ' + (pomoRound + 1), 'ok');
+  clearInterval(pomoTick);
+  pomoTick = setInterval(pomoOnTick, 500);
+}
+
+function pomoOnTick() {
+  const elapsed = Math.floor((Date.now() - pomoSegStart) / 1000);
+  pomoSec = Math.max(0, pomoSecAtStart - elapsed);
+  renderPomoClock();
+  updatePomoArc();
+  if (pomoSec <= 0) {
+    clearInterval(pomoTick);
+    pomoTick = null;
+    pomoActive = false;
+    const btn2 = G('pomo-main-btn');
+    if (btn2) { btn2.textContent = '▶'; btn2.classList.remove('running'); }
+    if (pomoPhase === 'work') {
+      pomoRound++;
+      const earnedPts = pomoWorkMins;
+      if (uid && earnedPts > 0) {
+        const subj = G('subj-sel')?.value || '—';
+        pushPendingPts({ pts: earnedPts, secs: pomoWorkMins * 60, subj, uid, ts: Date.now() });
+        flash('+' + earnedPts + ' ⚡');
+        flushPendingPts();
+      }
+      if (pomoRound >= pomoTotalRounds) {
+        toast('🎉 أتممت ' + pomoTotalRounds + ' جولات! استراحة طويلة تستاهلها يا بطل 🏆', 'ok');
+        pomoRound = 0;
         pomoPhase = 'work';
-        pomoSec = pomoWorkMins * 60;
+        pomoInit();
+      } else {
+        toast('✅ جولة ' + pomoRound + ' خلصت! خذ استراحة ☕', 'ok');
+        pomoPhase = 'break';
+        pomoSec = pomoBreakMins * 60;
+        renderPomoRounds();
         renderPomoClock();
         updatePomoArc();
+        setTimeout(() => { if (!pomoActive) pomoStart(); }, 1500);
       }
+    } else {
+      toast('💪 انتهت الاستراحة! ابدأ الجولة ' + (pomoRound + 1), 'ok');
+      pomoPhase = 'work';
+      pomoSec = pomoWorkMins * 60;
+      renderPomoClock();
+      updatePomoArc();
     }
-  }, 500);
+  }
 }
 
 function pomoPause() {
+  if (pomoActive) {
+    pomoSec = Math.max(0, pomoSecAtStart - Math.floor((Date.now() - pomoSegStart) / 1000));
+  }
   pomoActive = false;
   clearInterval(pomoTick);
   pomoTick = null;
@@ -1820,21 +1821,20 @@ window.switchStudyMode = (mode) => {
 
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
-    if (pomoActive) pomoBgTs = Date.now();
-  } else {
-    if (pomoActive && pomoBgTs) {
-      const elapsed = Math.floor((Date.now() - pomoBgTs) / 1000);
-      pomoBgTs = null;
+    if (pomoActive && pomoTick) {
+      pomoSec = Math.max(0, pomoSecAtStart - Math.floor((Date.now() - pomoSegStart) / 1000));
       clearInterval(pomoTick);
       pomoTick = null;
-      pomoSec = Math.max(0, pomoSec - elapsed);
-      pomoActive = false;
-      pomoStart();
+    }
+  } else {
+    if (pomoActive && !pomoTick) {
+      pomoSegStart   = Date.now();
+      pomoSecAtStart = pomoSec;
+      pomoTick = setInterval(pomoOnTick, 500);
+      pomoOnTick();
     }
   }
 });
-
-// ══════════════════════ DAILY GOALS ══════════════════════
 
 function goalsKey() {
   const today = new Date().toISOString().slice(0,10);
@@ -1895,18 +1895,15 @@ window.deleteGoal = i => {
   });
 })();
 
-// ══════════════════════ YOUTUBE — IFrame API ══════════════════════
-
 let ytPlayer       = null;
 let ytApiReady     = false;
 let currentYT      = null;
 let ytWatchSec     = 0;
 let ytWatchTick    = null;
 let ytWatchPts     = 0;
-let ytPendingId    = null; // id to play once API is ready
+let ytPendingId    = null;
 let ytSearchMode   = 'link';
 
-// Called by YouTube when API script loads
 window.onYouTubeIframeAPIReady = function() {
   ytApiReady = true;
   if (ytPendingId) { _ytCreatePlayer(ytPendingId, ytPendingId._title || ''); ytPendingId = null; }
@@ -1975,14 +1972,11 @@ window.ytFullscreen = () => {
 function _ytCreatePlayer(id, title) {
   const wrap = G('yt-player-div');
   if (!wrap) return;
-  // destroy old player
   if (ytPlayer) { try { ytPlayer.destroy(); } catch{} ytPlayer = null; }
   wrap.innerHTML = '';
 
-  // stop old watch timer
   _ytStopWatch();
 
-  // iOS PWA fix: نبني div داخلي جديد
   const inner = document.createElement('div');
   inner.id = 'yt-player-inner';
   inner.style.cssText = 'width:100%;height:100%;display:block';
@@ -1993,7 +1987,6 @@ function _ytCreatePlayer(id, title) {
     playerVars: { autoplay:1, rel:0, playsinline:1, fs:1 },
     events: {
       onReady: (e) => {
-        // iOS PWA fix: أضف allow attributes على الـ iframe
         const iframe = wrap.querySelector('iframe');
         if (iframe) {
           iframe.setAttribute('allow', 'autoplay; fullscreen; encrypted-media; picture-in-picture');
@@ -2015,7 +2008,6 @@ function _ytCreatePlayer(id, title) {
         }
       },
       onError: (e) => {
-        // codes 2,5,100,101,150 = can't play here
         G('yt-player-wrap').style.display   = 'none';
         G('yt-fallback-card').style.display = 'block';
         toast('⚠️ هذا الفيديو لا يمكن تشغيله هنا — افتحه في يوتيوب','warn');
@@ -2030,7 +2022,6 @@ function _ytStartWatch() {
     ytWatchSec++;
     const mins = Math.floor(ytWatchSec / 60);
     setText('yt-watch-min', mins);
-    // award pts every minute
     if (ytWatchSec % 60 === 0) {
       ytWatchPts++;
       setText('yt-watch-pts', ytWatchPts);
@@ -2053,28 +2044,23 @@ function _ytSaveWatchPts() {
   ytWatchSec = 0; ytWatchPts = 0;
   setText('yt-watch-min', 0); setText('yt-watch-pts', 0);
 
-  const pending = JSON.parse(localStorage.getItem('mizan_pending_pts') || '[]');
-  pending.push({ pts, secs, subj: subj + ' 🎬', uid, ts: Date.now() });
-  localStorage.setItem('mizan_pending_pts', JSON.stringify(pending));
+  pushPendingPts({ pts, secs, subj: subj + ' 🎬', uid, ts: Date.now() });
   toast(`🎬 +${pts} نقطة من وقت المشاهدة!`,'ok');
   flash('+'+pts+' 🎬');
   flushPendingPts();
 }
 
-// Stop watch and save if leaving yt tab
 function ytOnLeave() {
   _ytStopWatch();
   _ytSaveWatchPts();
 }
 
-// ── YT Search (via open noembed / oEmbed) ──
 window.ytSearch = async () => {
   const q = G('yt-search-q').value.trim();
   if (!q) return;
   const resultsEl = G('yt-search-results');
   resultsEl.innerHTML = '<div class="empty-msg">🔍 جاري البحث…</div>';
 
-  // Use Invidious search API (open source YT frontend, no key needed)
   const instances = [
     'https://inv.nadeko.net',
     'https://invidious.privacyredirect.com',
@@ -2113,7 +2099,6 @@ window.ytSearch = async () => {
       return;
     } catch {}
   }
-  // all instances failed — fallback
   resultsEl.innerHTML = `
     <div class="empty-msg" style="text-align:right;line-height:1.8">
       ⚠️ خدمة البحث غير متاحة الآن<br>
@@ -2172,8 +2157,6 @@ function renderYTLibrary() {
   });
 }
 
-// ══════════════════════ STATS ══════════════════════
-
 async function loadStats() {
   if (!uid) return;
   try {
@@ -2182,7 +2165,6 @@ async function loadStats() {
       const sessQ = query(collection(db,'sessions'), where('uid','==',uid), orderBy('ts','desc'), limit(200));
       snap = await getDocs(sessQ);
     } catch(idxErr) {
-      // Fallback if composite index isn't ready yet
       const sessQ2 = query(collection(db,'sessions'), where('uid','==',uid), limit(200));
       snap = await getDocs(sessQ2);
     }
@@ -2193,7 +2175,7 @@ async function loadStats() {
 
     let todayMin = 0, weekMin = 0, sessionsCount = 0;
     const subjMinutes = {};
-    const dayBuckets = {}; // 'YYYY-MM-DD' -> minutes
+    const dayBuckets = {};
     const studyDays = new Set();
 
     snap.forEach(d => {
@@ -2219,7 +2201,6 @@ async function loadStats() {
     setText('stat-week', weekMin);
     setText('stat-sessions', sessionsCount);
 
-    // streak calc
     let streak = 0;
     let cursor = new Date(now);
     while (true) {
@@ -2234,7 +2215,6 @@ async function loadStats() {
     }
     setText('stat-streak', streak);
 
-    // 7-day chart
     const chartWrap = G('stat-chart-wrap');
     if (chartWrap) {
       chartWrap.innerHTML = '';
@@ -2268,7 +2248,6 @@ async function loadStats() {
       });
     }
 
-    // subjects breakdown
     const subjWrap = G('stat-subjects-wrap');
     const subjEmpty = G('stat-subjects-empty');
     if (subjWrap) {
@@ -2300,7 +2279,6 @@ async function loadStats() {
     console.error('stats error', e);
   }
 }
-// ══════════════════════ WEEKLY SCHEDULE ══════════════════════
 
 const SCHED_SCI = window.SCHED_SCI = {
   'الأحد':    ['📐 رياضيات','⚗️ كيمياء'],
@@ -2409,16 +2387,14 @@ function buildExamCountdown() {
     wrap.appendChild(box);
   });
 }
-// ══════════════════════ AI CHAT — GROQ ══════════════════════
 
-const GROQ_KEY  = ''; // الـ key عند الـ Worker — لا تحطه هنا
-const GROQ_URL  = 'https://aiii.ahmedtec312.workers.dev/'; // ← غيّر هذا لرابط الـ Worker مالتك
+const GROQ_KEY  = '';
+const GROQ_URL  = 'https://aiii.ahmedtec312.workers.dev/';
 const GROQ_MODEL = 'llama-3.3-70b-versatile';
 
-let aiHistory = []; // conversation memory
+let aiHistory = [];
 let aiTyping  = false;
 
-// ══ دالة تجمع بيانات الطالب الحالية من الـ DOM ══
 function buildStudentContext() {
   const name     = G('me-name')?.textContent?.trim()      || 'الطالب';
   const rank     = G('me-rank-chip')?.textContent?.trim() || '';
@@ -2481,8 +2457,6 @@ ${s.todaySubjs}
   - اجعل ردودك مختصرة ومفيدة (3-6 أسطر) إلا إذا الموضوع يحتاج أكثر`;
 }
 
-
-
 function aiAppendMsg(role, text) {
   const msgs = G('ai-msgs');
   if (!msgs) return;
@@ -2495,7 +2469,6 @@ function aiAppendMsg(role, text) {
 
   const bubble = document.createElement('div');
   bubble.className = 'ai-bubble';
-  // render newlines
   bubble.innerHTML = text.replace(/\n/g,'<br>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
 
   div.appendChild(av);
@@ -2522,7 +2495,6 @@ function aiHideTyping() {
 window.aiQuick = (text) => {
   const inp = G('ai-input');
   if (inp) { inp.value = text; inp.style.height = '42px'; }
-  // hide quick buttons after first use
   const qb = G('ai-quick-btns');
   if (qb) qb.style.display = 'none';
   aiSend();
@@ -2539,14 +2511,12 @@ window.aiSend = async () => {
   const sendBtn = G('ai-send-btn');
   if (sendBtn) sendBtn.disabled = true;
 
-  // hide quick btns
   const qb = G('ai-quick-btns');
   if (qb) qb.style.display = 'none';
 
   aiAppendMsg('user', text);
   aiHistory.push({ role:'user', content: text });
 
-  // keep history max 12 messages (6 exchanges)
   if (aiHistory.length > 12) aiHistory = aiHistory.slice(-12);
 
   aiTyping = true;
@@ -2557,7 +2527,6 @@ window.aiSend = async () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // Authorization يضيفها الـ Worker تلقائياً
       },
       body: JSON.stringify({
         model: GROQ_MODEL,
